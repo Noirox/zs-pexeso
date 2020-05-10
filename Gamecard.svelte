@@ -14,7 +14,7 @@
 <style>
   .game_card {
     position: relative;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.562);
+    text-shadow: 1px 1px 0 rgba(14, 13, 13, 0.562);
     -webkit-perspective: 700px;
     perspective: 700px;
   }
@@ -38,6 +38,7 @@
   }
 
   .game_card_cover {
+    color: whitesmoke;
     cursor: pointer;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--card-border-color);
@@ -46,7 +47,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: var(--card-bg-color);
+    background: hsl(147, 26%, 27%);
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;

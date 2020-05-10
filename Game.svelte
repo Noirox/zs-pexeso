@@ -72,6 +72,10 @@
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
+    border: 2px solid rgb(196, 224, 210);
+    border-radius: 4px;
+    box-shadow: 0 2px 1px 1px rgba(66, 66, 66, 0.78),
+      0 1px 4px 2px rgba(66, 66, 66, 0.76);
   }
 
   .game_cards {
@@ -84,7 +88,7 @@
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: 100px;
     grid-gap: 5px;
-    padding: 5px;
+    /* padding: 5px; */
   }
 
   .game_cards_filter {

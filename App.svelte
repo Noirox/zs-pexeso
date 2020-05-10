@@ -26,6 +26,8 @@
     --main-select: #eef9bf;
   }
 
+  @import url("https://fonts.googleapis.com/css?family=Rakkas");
+
   :global(body) {
     margin: 0;
     display: flex;
@@ -34,21 +36,28 @@
     min-height: 100vh;
     background: var(--main-bg-color);
     color: var(--main-color);
+    /* background: linear-gradient(to bottom left, var(--main-bg-color) 20%, #53e3a6 70%) */
+    background-color: #5b9a78;
+    background-image: -webkit-linear-gradient(
+      -25deg,
+      #5b9a78 49.95%,
+      rgb(196, 224, 210) 50.05%
+    );
   }
 
   .box {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 760px;
+    /* width: 760px; */
     /* border: 2px dotted rgb(96, 139, 168); */
-    top: -30px;
+    top: 0;
     position: fixed;
   }
 
   .box > div {
     align-self: stretch;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .group {
@@ -56,7 +65,13 @@
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    margin-bottom: 2em;
+
+    justify-content: space-between;
+  }
+
+  .group.container {
+    display: flex;
+    margin-bottom: 1.5em;
   }
 
   .disabled {
@@ -78,7 +93,7 @@
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 0.07em;
-    font-size: 16px;
+    font-size: 12px;
     user-select: none;
   }
 
@@ -119,11 +134,37 @@
     -webkit-transition: 0.25s all ease;
     transition: 0.25s all ease;
   }
+
+  header {
+    padding: 20px;
+    margin-left: -150px;
+    color: rgb(196, 224, 210);
+    text-shadow: 1px 1px 0 rgba(14, 13, 13, 0.562);
+    background-color: #5b9a78;
+  }
+  header h1 {
+    padding-bottom: 0;
+    font-size: 28px;
+    font-family: "Rakkas";
+    margin: 0;
+    letter-spacing: 2px;
+    text-decoration: underline;
+  }
+  header p {
+    padding-bottom: 5px;
+    font-size: 14px;
+    margin: 0;
+    margin-top: -5px;
+  }
 </style>
 
+
 <section class="box">
-  <div>
-    <h1>Matematika pro 1. ročník</h1>
+  <header>
+  <h1>&nbsp;Matematika hrou&nbsp;</h1>
+  <p>pro 1. ročník</p>
+</header>
+    <div class="group container">
     <div class="group">
       <input type="radio" bind:group={op} value={'s'} name="op" id="opS" />
       <label for="opS">➕ Sčítání</label>
@@ -133,15 +174,14 @@
       <label class="disabled" for="opM">➕➖ Mix</label>
     </div>
 
-    <div class="group">
+    <div class="group" style="float: right;">
       <input type="radio" bind:group={lim} value={0} name="lim" id="lim10" />
       <label for="lim10">do 10</label>
       <input type="radio" bind:group={lim} value={1} name="lim" id="lim20" />
       <label for="lim20">do 20</label>
       <input type="radio" bind:group={lim} value={2} name="lim" id="lim2010" />
       <label for="lim2010">do 20 bez přechodu</label>
-    </div>
+  </div>
   </div>
   <Game limit={lim} operation={op} />
 </section>
-
